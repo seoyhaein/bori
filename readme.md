@@ -117,5 +117,9 @@ func runREPL(ctx context.Context) {
 
 
 ```
+### 생각하기
+- https://www.notion.so/context-20d86e6dd1d1807eaceffdd2acbd9ff4
+- https://www.notion.so/20d86e6dd1d180b39cc8cd0522230090
 
-
+- completion 관련
+- https://chatgpt.com/share/68453f6a-c5cc-800d-9420-fcf0d616fb8f
