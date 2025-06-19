@@ -21,6 +21,8 @@ import (
 
 var logger = globallog.Log
 
+// TODO 테스트 및 개발을 위해서 들어간 코드 일단 지우지 말것.
+
 func main() {
 	// 인증서가 없으면 생성
 	if !fileExists("ca.crt") || !fileExists("ca.key") {
