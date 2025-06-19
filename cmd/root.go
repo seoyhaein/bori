@@ -2,9 +2,9 @@ package cmd
 
 import (
 	"context"
-	cfg "github.com/seoyhaein/cliTester/cmd/config"
-	"github.com/seoyhaein/cliTester/cmd/query"
-	"github.com/seoyhaein/cliTester/state"
+	cfg "github.com/seoyhaein/bori/cmd/config"
+	"github.com/seoyhaein/bori/cmd/query"
+	"github.com/seoyhaein/bori/state"
 	"github.com/spf13/cobra"
 )
 
@@ -16,13 +16,16 @@ var RootCmd = &cobra.Command{
 스캔·그룹핑·번들링·전송·조회 기능을 제공합니다.`,
 }
 
-// Execute adds all child commands to the root command and sets flags appropriately.
-func Execute(ctx context.Context) error {
+// Execute executes the root command with the given context and args. TODO 살펴보기.
+func Execute(ctx context.Context, args []string) error {
+	// Context 설정 (취소 신호 등 전달용)
 	RootCmd.SetContext(ctx)
-	if err := RootCmd.ExecuteContext(ctx); err != nil {
-		return err
-	}
-	return nil
+
+	// REPL 이나 테스트 등 외부에서 넘겨준 args 사용
+	RootCmd.SetArgs(args)
+
+	// 실제 실행
+	return RootCmd.ExecuteContext(ctx)
 }
 
 func init() {
