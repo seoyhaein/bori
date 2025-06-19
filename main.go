@@ -25,7 +25,7 @@ func main() {
 	)
 
 	// 1-2) gRPC 서버 시작
-	if err := pn.Start(); err != nil {
+	if err := pn.ServerStart(); err != nil {
 		log.Fatalf("PeerNode start failed: %v", err)
 	}
 
